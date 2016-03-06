@@ -1,0 +1,15 @@
+{
+  "name": "wg",
+  "version": "0.1.0",
+  "description": "Whisper Group Front-End",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nipol",
+  "license": "GNU",
+  "dependencies": {
+    "@angular/router": "^0.2.0",
+    "angular": "^1.5.0"
+  }
+}
