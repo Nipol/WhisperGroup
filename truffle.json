@@ -2,9 +2,9 @@
   "build": {
     "index.html": "index.html",
     "app.js": [
-      "javascripts/app.js",
       "node_modules/angular/angular.min.js",
-      "node_modules/@angular/router/angular1/angular_1_router.js"
+      "node_modules/@angular/router/angular1/angular_1_router.js",
+      "javascripts/app.js"
     ],
     "app.css": [
       "stylesheets/app.css"
