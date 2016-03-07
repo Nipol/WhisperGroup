@@ -5,6 +5,10 @@ contract Group is owner {
   mapping (address => uint) memberId;
   // 사용자들
   Member[] public members;
+  // 채널들
+  Channel[] public channels;
+  // 채널 속 사람들
+  mapping (Channel => Member[]) memberInChannel;
 
   // 사용자 객체
   struct Member {
@@ -20,8 +24,23 @@ contract Group is owner {
     bool isActive;
   }
 
+  // 사용자 대화 채널
+  struct Channel {
+    // id
+    string id;
+    // # + name
+    string name;
+    // 숨겨진 채널인지 아닌지.
+    bool ishide;
+    // 그룹의 기본 채널인지 아닌지
+    bool groupbasic;
+  }
+
   // constructor
-  // 관리자 계정을 미리 할당
+  // 그룹이 생길 때 관리자 계정을 미리 할당
+  // TODO: 그룹이 생길 때 기본 채널을 미리 할당
+  // TODO: 그룹이 생길 때 관리자 계정을 일반 채널에 추가한다.
+  // 
   function Group(string adwhisperid) {
     members.length++;
     members[0] = Member({memberaddr: 0, whisperid: adwhisperid, nickname: 'Admin', since: now, isActive: false});
